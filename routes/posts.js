@@ -3,6 +3,9 @@ import postSchema from '../schemas/post.js';
 const router = express.Router();
 
 // 게시글 작성
+router.post('/', (req, res, next) => {
+    res.status(201).json({ message: '게시글 작성 성공' });
+});
 
 // 게시글 목록 조회 (내림차순)
 
