@@ -42,6 +42,7 @@ router.get('/:_postId', async (req, res, next) => {
             user: post.user,
             title: post.title,
             content: post.content,
+            createdAt: post.createdAt,
         };
         res.status(200).json(targetPost);
     } catch (error) {
