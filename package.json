@@ -1,0 +1,30 @@
+{
+    "name": "first-node-server",
+    "version": "1.0.0",
+    "description": "항해 첫 노드",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "stert": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Monggle88/first-node-server.git"
+    },
+    "keywords": [],
+    "author": "Monggle88",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Monggle88/first-node-server/issues"
+    },
+    "homepage": "https://github.com/Monggle88/first-node-server#readme",
+    "dependencies": {
+        "express": "^4.18.1",
+        "mongoose": "^6.6.5",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
+}
