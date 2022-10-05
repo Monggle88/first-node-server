@@ -16,7 +16,7 @@ app.use(indexRouter);
 
 // error 처리
 app.use((req, res, next) => {
-    res.sendStatus(404);
+    res.status(404).json({ message: '404 Not Found.' });
 });
 
 app.use((error, req, res, next) => {
