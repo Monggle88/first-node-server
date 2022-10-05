@@ -10,7 +10,7 @@ const port = 3000;
 dbConnection();
 
 app.use(express.json());
-app.use(morgan());
+app.use(morgan('tiny'));
 
 app.use(indexRouter);
 

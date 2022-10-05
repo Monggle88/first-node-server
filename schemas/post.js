@@ -21,4 +21,4 @@ const postsSchema = new mongoose.Schema({
     },
 });
 
-export default mongoose.model('comments', commentsSchema);
+export default mongoose.model('posts', postsSchema);
