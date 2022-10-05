@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
         });
         res.status(200).json(post);
     } catch (error) {
-        res.status(400).json({ message: '게시글 목록 조회 오류' });
+        res.status(400).json({ message: 'Error! 게시글 목록 조회 오류' });
     }
 });
 
@@ -47,7 +47,7 @@ router.get('/:_postId', async (req, res, next) => {
         res.status(200).json(targetPost);
     } catch (error) {
         console.log(error);
-        res.status(400).json({ message: 'Error! 게시글 상세 조회 실패' });
+        res.status(400).json({ message: 'Error! 게시글 상세조회 실패' });
     }
 });
 
@@ -65,7 +65,7 @@ router.put('/:_postId', async (req, res, next) => {
         } else {
             return res.status(400).json({
                 success: false,
-                message: '비밀번호가 일치하지 않습니다.',
+                message: 'Error! 비밀번호 불일치',
             });
         }
         res.status(201).json({
@@ -88,7 +88,7 @@ router.delete('/:_postId', async (req, res, next) => {
         } else {
             return res
                 .status(400)
-                .json({ success: false, message: 'Error! 비밀번호 불일치.' });
+                .json({ success: false, message: 'Error! 비밀번호 불일치' });
         }
         res.status(201).json({
             message: '게시글이 성공적으로 삭제되었습니다.',
