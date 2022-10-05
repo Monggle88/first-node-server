@@ -15,13 +15,9 @@ app.use(morgan('tiny'));
 app.use(indexRouter);
 
 // error 처리
-app.use((req, res, next) => {
-    res.status(404).json({ message: '404 Not Found.' });
-});
-
 app.use((error, req, res, next) => {
     console.log(error);
-    res.sendStatus(500);
+    res.status(404).json({ message: '404 Not Found.' });
 });
 
 app.listen(port, (req, res, next) => {

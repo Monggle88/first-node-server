@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
         });
         res.status(200).json(post);
     } catch (error) {
-        res.status(400).json({ message: 'Error! 게시글 목록 조회 오류' });
+        return next(error);
     }
 });
 
@@ -28,8 +28,7 @@ router.post('/', async (req, res, next) => {
         await postSchema.create({ user, password, title, content });
         res.status(201).json({ message: '게시글 작성 성공' });
     } catch (error) {
-        console.log(error);
-        res.status(400).json({ message: 'Error! 게시글 작성 실패' });
+        return next(error);
     }
 });
 
@@ -46,8 +45,7 @@ router.get('/:_postId', async (req, res, next) => {
         };
         res.status(200).json(targetPost);
     } catch (error) {
-        console.log(error);
-        res.status(400).json({ message: 'Error! 게시글 상세조회 실패' });
+        return next(error);
     }
 });
 
@@ -72,8 +70,7 @@ router.put('/:_postId', async (req, res, next) => {
             message: '게시글이 성공적으로 수정되었습니다.',
         });
     } catch (error) {
-        console.log(error);
-        res.status(400).json({ message: 'Error! 게시글 수정 실패' });
+        return next(error);
     }
 });
 
@@ -94,7 +91,7 @@ router.delete('/:_postId', async (req, res, next) => {
             message: '게시글이 성공적으로 삭제되었습니다.',
         });
     } catch (error) {
-        res.status(400).json({ message: 'Error! 게시글 삭제 실패' });
+        return next(error);
     }
 });
 
