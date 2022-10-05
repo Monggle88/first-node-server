@@ -17,7 +17,7 @@ app.use(indexRouter);
 // error 처리
 app.use((error, req, res, next) => {
     console.log(error);
-    res.status(404).json({ message: '404 Not Found.' });
+    res.status(404).json({ Error: '404 Not Found.' });
 });
 
 app.listen(port, (req, res, next) => {
